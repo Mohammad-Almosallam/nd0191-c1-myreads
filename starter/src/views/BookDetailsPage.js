@@ -8,10 +8,17 @@ function BookDetailsPage() {
   const { mappedFromSearchPage, bookId } = loc.state;
 
   useEffect(() => {
-    const books = async () => {
-      setBookDetails(await get(bookId));
+    let unmounted = false;
+
+    setTimeout(async () => {
+      if (!unmounted) {
+        setBookDetails(await get(bookId));
+      }
+    }, 1000);
+
+    return () => {
+      unmounted = true;
     };
-    books();
   }, [bookId]);
   return (
     <div>

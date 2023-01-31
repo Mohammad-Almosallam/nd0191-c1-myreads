@@ -36,7 +36,7 @@ function Book(props) {
       <Link
         to="/bookDetails"
         state={{
-          firedFromSearchPage: props.mappedFromSearchPage,
+          mappedFromSearchPage: props.mappedFromSearchPage,
           bookId: props.id,
         }}
       >
