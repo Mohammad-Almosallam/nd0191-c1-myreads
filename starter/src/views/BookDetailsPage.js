@@ -14,7 +14,7 @@ function BookDetailsPage() {
       if (!unmounted) {
         setBookDetails(await get(bookId));
       }
-    }, 1000);
+    }, 2000);
 
     return () => {
       unmounted = true;
