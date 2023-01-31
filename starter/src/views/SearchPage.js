@@ -58,7 +58,7 @@ function SearchPage(props) {
     if (book) {
       return book.shelf;
     } else {
-      return currentShelf;
+      return "none";
     }
   }
 
