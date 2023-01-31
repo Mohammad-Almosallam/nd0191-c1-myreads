@@ -1,6 +1,6 @@
 import React from "react";
 import Book from "./Book";
-import { update } from "../BooksAPI";
+import { update } from "../api/BooksAPI";
 
 function Bookshelf(props) {
   async function handleChange(e, bookId) {
@@ -23,7 +23,12 @@ function Bookshelf(props) {
                   bookAuthors={e.authors}
                   currentShelf={e.shelf}
                   id={e.id}
-                  img={e.imageLinks.smallThumbnail}
+                  img={
+                    e.imageLinks === undefined
+                      ? require("../icons/notFound.png")
+                      : e.imageLinks.smallThumbnail
+                  }
+                  mappedFromSearchPage={false}
                 />
               </li>
             );

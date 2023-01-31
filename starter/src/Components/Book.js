@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Book(props) {
   return (
@@ -32,6 +33,15 @@ function Book(props) {
       </div>
       <div className="book-title">{props.bookTitle}</div>
       <div className="book-authors">{props.bookAuthors}</div>
+      <Link
+        to="/bookDetails"
+        state={{
+          firedFromSearchPage: props.mappedFromSearchPage,
+          bookId: props.id,
+        }}
+      >
+        <button className="book-read-more">Read more</button>
+      </Link>
     </div>
   );
 }
