@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Book from "./Book";
 import { update } from "../BooksAPI";
 
 function Bookshelf(props) {
   async function handleChange(e, bookId) {
-    console.log("before");
     const book = props.books.filter((book) => book.id === bookId);
-    console.log("Filtered");
     await update(book[0], e.target.value);
-    console.log("done");
     props.refreshUpdates();
-    console.log("refresh");
   }
 
   return (

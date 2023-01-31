@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Book(props) {
   return (
@@ -10,6 +10,7 @@ function Book(props) {
             width: 128,
             height: 193,
             backgroundImage: `url(${props.img})`,
+            backgroundPosition: "center",
           }}
         />
         <div className="book-shelf-changer">

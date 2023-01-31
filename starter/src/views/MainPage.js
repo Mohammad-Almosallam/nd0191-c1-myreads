@@ -3,6 +3,11 @@ import Bookshelf from "../Components/Bookshelf";
 import { Link } from "react-router-dom";
 
 function MainPage(props) {
+  /**
+   * It takes a shelf name as an argument and returns an array of books that are on that shelf
+   * @param shelfName - the name of the shelf you want to filter by
+   * @returns The filtered array of books.
+   */
   function filterBooksByShelf(shelfName) {
     const filtered = props.books.filter((book) => book.shelf === shelfName);
     return filtered;
